@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Doctors Diagnostic Centre</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- Navigation -->
+            <nav class="navbar" id="navbar">
+                <div class="container nav-container">
+                    <a href="index.html" class="logo">
+                        <img src="images/ddc-logo-rb.png" alt="Doctors Diagnostic Centre" class="header-logo">
+                        <span class="clinic-name">DOCTORS DIAGNOSTIC CENTER</span>
+                    </a>
+                    
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link">Clinic</a>
+                        <a href="services.html" class="nav-link">Services</a>
+                        <a href="packages.html" class="nav-link">Premium</a>
+                        <a href="specialists.html" class="nav-link">Specialists</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="tel:+919440920756" class="btn btn-primary nav-btn mobile-only-btn" style="display: none;">
+                            <span class="btn-text">Call Now</span>
+                            <span class="btn-icon"><i class="fa-solid fa-phone"></i></span>
+                        </a>
+                    </div>
+        
+                    <div class="nav-actions">
+                        <a href="tel:+919440920756" class="btn btn-primary nav-btn desktop-btn">
+                            <span class="btn-text">Call Now</span>
+                            <span class="btn-icon"><i class="fa-solid fa-phone"></i></span>
+                        </a>
+                        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Page Hero -->
+            <section class="page-hero">
+                <div class="hero-bg-overlay"></div>
+                <div class="container page-hero-container relative" style="z-index: 5;">
+                    <div class="hero-badge reveal-item" style="margin: 0 auto 30px;">
+                        <span class="pulse-dot"></span> 24/7 Support
+                    </div>
+                    <h1 class="hero-title reveal-text">Get in Touch With Us</h1>
+                    <p class="hero-subtitle reveal-item mt-6">Contact us for test inquiries, appointments, or health packages.</p>
+                </div>
+            </section>
+
+            <!-- Contact Box -->
+            <section class="section" id="contact-info" style="padding-bottom: 60px;">
+                <div class="container section-reveal">
+                    <div class="contact-glass-container" style="margin-bottom: 0;">
+                        <div class="contact-info-panel">
+                            <h2>Contact Details</h2>
+                            <p>We are ready to assist you with your health and diagnostic needs.</p>
+                            
+                            <div class="contact-details-list">
+                                <div class="cd-item">
+                                    <div class="cd-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="cd-text">
+                                        <strong>Doctors Diagnostic Centre</strong><br>
+                                        PSR Street, Sullurupeta,<br>
+                                        Andhra Pradesh 524121<br>
+                                        <span style="font-size: 0.9rem; color: var(--secondary);">Near Bus Station | Opposite Bhavitha School</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="cd-item">
+                                    <div class="cd-icon"><i class="fa-solid fa-phone"></i></div>
+                                    <div class="cd-text">
+                                        <strong>Phone Number</strong><br>
+                                        <a href="tel:+919440920756">+91 94409 20756</a>
+                                    </div>
+                                </div>
+
+                                <div class="cd-item">
+                                    <div class="cd-icon"><i class="fa-solid fa-clock"></i></div>
+                                    <div class="cd-text">
+                                        <strong>Working Hours</strong><br>
+                                        Open Daily: Morning – Until 1 PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form-panel" style="flex: 1; padding: 60px; background: var(--bg-light); border-left: 1px solid rgba(0,0,0,0.05);">
+                            <h3 style="font-size: 2rem; margin-bottom: 24px; color: var(--primary);">Send an Inquiry</h3>
+                            <form class="contact-form" id="contactWhatsAppForm" onsubmit="sendContactWhatsApp(event)">
+                                <div class="form-group">
+                                    <input type="text" id="contactName" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group" style="display: flex; gap: 15px;">
+                                    <input type="number" id="contactAge" class="form-control" placeholder="Age" required style="flex: 1;">
+                                    <select id="contactGender" class="form-control" required style="color:var(--text-muted); cursor: pointer; flex: 1;">
+                                        <option value="" disabled selected>Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="contactMobile" class="form-control" placeholder="Mobile Number" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="contactAddress" class="form-control" placeholder="Address" required>
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem;">Service Category (Select multiple)</label>
+                                    <select id="contactServices" class="form-control" multiple required style="color:var(--text-muted); cursor: pointer; height: 120px;">
+                                        <option value="CBC+ESR">CBC+ESR</option>
+                                        <option value="CBC">CBC</option>
+                                        <option value="HbA1c">HbA1c</option>
+                                        <option value="Lipid Profile">Lipid Profile</option>
+                                        <option value="Liver Function Test">Liver Function Test</option>
+                                        <option value="Renal Function Test">Renal Function Test</option>
+                                        <option value="FBS">FBS</option>
+                                        <option value="PPBS">PPBS</option>
+                                        <option value="Urine Routine">Urine Routine</option>
+                                        <option value="Electrolytes (Sodium, Potassium, Calcium, Chloride)">Electrolytes (Sodium, Potassium, Calcium, Chloride)</option>
+                                        <option value="X-ray Chest">X-ray Chest</option>
+                                        <option value="ECG">ECG</option>
+                                        <option value="Thyroid T3">Thyroid T3</option>
+                                    </select>
+                                    <small style="color: var(--text-muted); font-size: 0.8rem;">Hold Ctrl (Windows) or Cmd (Mac) to select multiple</small>
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" id="contactDate" class="form-control" required style="color:var(--text-muted);">
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="contactMessage" class="form-control" placeholder="Your Message (Optional)"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-full glow-btn">Send Inquiry via WhatsApp</button>
+                            </form>
+
+                            <script>
+                                function sendContactWhatsApp(event) {
+                                    event.preventDefault();
+                                    
+                                    const name = document.getElementById('contactName').value;
+                                    const age = document.getElementById('contactAge').value;
+                                    const gender = document.getElementById('contactGender').value;
+                                    const mobile = document.getElementById('contactMobile').value;
+                                    const address = document.getElementById('contactAddress').value;
+                                    const date = document.getElementById('contactDate').value;
+                                    const message = document.getElementById('contactMessage').value;
+                                    
+                                    const selectElement = document.getElementById('contactServices');
+                                    const selectedServices = Array.from(selectElement.selectedOptions).map(option => option.value).join(', ');
+                                    
+                                    if (!selectedServices) {
+                                        alert("Please select at least one service category.");
+                                        return;
+                                    }
+
+                                    const whatsappText = `Patient Name: ${name}
+Age: ${age}
+Gender: ${gender}
+Mobile Number: ${mobile}
+Address: ${address}
+
+Selected Services: ${selectedServices}
+
+Preferred Date: ${date}
+
+Additional Message: ${message ? message : 'None'}`;
+
+                                    const whatsappUrl = `https://wa.me/919440920756?text=${encodeURIComponent(whatsappText)}`;
+                                    window.open(whatsappUrl, '_blank');
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section class="section" style="padding-top: 0;">
+                <div class="container section-reveal">
+                    <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); height: 500px; position:relative;">
+                        <div style="position:absolute; top:45%; left:50%; transform:translate(-50%,-100%); z-index:10; pointer-events:none; font-size: 3.5rem; color: var(--secondary); animation: bounceScroll 2s infinite;">
+                            <i class="fa-solid fa-location-dot" style="filter: drop-shadow(0 10px 10px rgba(0,0,0,0.4));"></i>
+                        </div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1m2!1s0x3a4c81a9fbcb4c5d%3A0xe962d3a3721345!2sDoctors+Diagnostic+Centre!5e0!3m2!1sen!2sin!4v1703666666666!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer-modern">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <a href="index.html" class="logo">
+                                <i class="fa-solid fa-microscope" style="color: white; font-size: 2rem; margin-right: 12px;"></i>
+                                <div class="logo-text">
+                                    <h3>Doctors Diagnostic</h3>
+                                    <span>డాక్టర్స్ డయాగ్నస్టిక్</span>
+                                </div>
+                            </a>
+                            <p>Premium medical testing services delivering precision and care to the Sullurupeta community.</p>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4>Quick Links</h4>
+                            <a href="about.html">About Center</a>
+                            <a href="services.html">Our Services</a>
+                            <a href="index.html#why-choose-us">Why Choose Us</a>
+                            <a href="index.html#reviews">Patient Reviews</a>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4>Services</h4>
+                            <a href="services.html">Blood Testing</a>
+                            <a href="services.html">X-Ray Services</a>
+                            <a href="services.html">Pathology</a>
+                            <a href="packages.html">Health Checkups</a>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4>Contact</h4>
+                            <a href="tel:+919440920756">+91 94409 20756</a>
+                            <a href="contact.html">PSR Street, Sullurupeta</a>
+                            <a href="contact.html">Get Directions</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-bottom">
+                        <p>&copy; 2024 Doctors Diagnostic Centre. All Rights Reserved.</p>
+                        <div class="social-links-minimal">
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        
+        </div>
+    </div>
+
+    <!-- Floating Call Button -->
+    <a href="tel:+919440920756" class="floating-call-btn" aria-label="Call Now">
+        <div class="pulse-ring"></div>
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

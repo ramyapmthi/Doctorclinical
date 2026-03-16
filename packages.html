@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages | Doctors Diagnostic Centre</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- Navigation -->
+            <nav class="navbar" id="navbar">
+                <div class="container nav-container">
+                    <a href="index.html" class="logo">
+                        <img src="images/ddc-logo-rb.png" alt="Doctors Diagnostic Centre" class="header-logo">
+                        <span class="clinic-name">DOCTORS DIAGNOSTIC CENTER</span>
+                    </a>
+                    
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link">Clinic</a>
+                        <a href="services.html" class="nav-link">Services</a>
+                        <a href="packages.html" class="nav-link">Premium</a>
+                        <a href="specialists.html" class="nav-link">Specialists</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="tel:+919440920756" class="btn btn-primary nav-btn mobile-only-btn" style="display: none;">
+                            <span class="btn-text">Call Now</span>
+                            <span class="btn-icon"><i class="fa-solid fa-phone"></i></span>
+                        </a>
+                    </div>
+        
+                    <div class="nav-actions">
+                        <a href="tel:+919440920756" class="btn btn-primary nav-btn desktop-btn">
+                            <span class="btn-text">Call Now</span>
+                            <span class="btn-icon"><i class="fa-solid fa-phone"></i></span>
+                        </a>
+                        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Page Hero -->
+            <section class="page-hero">
+                <div class="hero-bg-overlay"></div>
+                <div class="container page-hero-container relative" style="z-index: 5;">
+                    <div class="hero-badge reveal-item" style="margin: 0 auto 30px;">
+                        <span class="pulse-dot"></span> Checkups
+                    </div>
+                    <h1 class="hero-title reveal-text">Premium Health Packages</h1>
+                    <p class="hero-subtitle reveal-item mt-6">Affordable diagnostic packages designed for preventive healthcare and comprehensive medical assessment.</p>
+                </div>
+            </section>
+
+            <!-- Package Cards -->
+            <section class="section" id="packages">
+                <div class="container">
+                    
+                    <div class="packages-grid section-reveal">
+                        <!-- Package 1 -->
+                        <div class="package-card glass-package">
+                            <h3 class="package-title">Basic Profile</h3>
+                            <div style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 8px;">Covers 40 Tests</div>
+                            <div class="package-price">₹1300</div>
+                            <ul class="package-features">
+                                <li><i class="fa-solid fa-check"></i> CBC</li>
+                                <li><i class="fa-solid fa-check"></i> HbA1c</li>
+                                <li><i class="fa-solid fa-check"></i> Lipid Profile</li>
+                                <li><i class="fa-solid fa-check"></i> Liver Function Test</li>
+                                <li><i class="fa-solid fa-check"></i> Renal Function Test + Electrolytes</li>
+                                <li><i class="fa-solid fa-check"></i> Urine Routine</li>
+                                <li><i class="fa-solid fa-check"></i> Thyroid T3 T4 TSH</li>
+                                <li><i class="fa-solid fa-check"></i> FBS</li>
+                                <li><i class="fa-solid fa-check"></i> PPBS</li>
+                            </ul>
+                            <a href="services.html#booking" class="btn btn-secondary btn-full">Book Package</a>
+                        </div>
+                        
+                        <!-- Package 2 (Highlighted) -->
+                        <div class="package-card glass-package highlighted" style="border-color: var(--secondary); box-shadow: var(--shadow-xl); transform: scale(1.02); z-index: 2;">
+                            <div class="package-badge" style="background: linear-gradient(135deg, var(--secondary), var(--accent));">Most Popular</div>
+                            <h3 class="package-title" style="color: var(--primary);">Executive Profile</h3>
+                            <div style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 8px;">Covers 80 Tests</div>
+                            <div class="package-price">₹2100</div>
+                            <ul class="package-features">
+                                <li><i class="fa-solid fa-check"></i> CBC, eGFR, HbA1c</li>
+                                <li><i class="fa-solid fa-check"></i> Lipid & Liver Function Profile</li>
+                                <li><i class="fa-solid fa-check"></i> Renal Function Test + Electrolytes</li>
+                                <li><i class="fa-solid fa-check"></i> Urine Routine</li>
+                                <li><i class="fa-solid fa-check"></i> Vitamin B12, Vitamin D3</li>
+                                <li><i class="fa-solid fa-check"></i> Basic Iron Profile</li>
+                                <li><i class="fa-solid fa-check"></i> Thyroid T3 T4 TSH</li>
+                                <li><i class="fa-solid fa-check"></i> FBS, PPBS, HS-CRP</li>
+                            </ul>
+                            <a href="services.html#booking" class="btn btn-primary btn-full glow-btn">Book Package</a>
+                        </div>
+                        
+                        <!-- Package 3 -->
+                        <div class="package-card glass-package">
+                            <h3 class="package-title">Full Body Checkup</h3>
+                            <div style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 8px;">Advanced Assessment</div>
+                            <div class="package-price">₹2100</div>
+                            <ul class="package-features">
+                                <li><i class="fa-solid fa-check"></i> CBC+ESR, CA125, ECG</li>
+                                <li><i class="fa-solid fa-check"></i> X-Ray Chest, eGFR</li>
+                                <li><i class="fa-solid fa-check"></i> HbA1c, Lipid Profile</li>
+                                <li><i class="fa-solid fa-check"></i> Liver & Renal Function Profile</li>
+                                <li><i class="fa-solid fa-check"></i> Urine Routine, Vitamin B12 & D3</li>
+                                <li><i class="fa-solid fa-check"></i> Basic Iron Profile</li>
+                                <li><i class="fa-solid fa-check"></i> Thyroid T3 T4 TSH</li>
+                                <li><i class="fa-solid fa-check"></i> FBS, PPBS, HS-CRP</li>
+                            </ul>
+                            <a href="services.html#booking" class="btn btn-secondary btn-full">Book Package</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison Table -->
+            <section class="section bg-light-modern" id="comparison">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <span class="section-tag section-reveal">Compare Features</span>
+                        <h2 class="section-title section-reveal">Package Comparison</h2>
+                    </div>
+
+                    <div class="comparison-table-wrapper section-reveal">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Tests Included</th>
+                                    <th>Basic Health</th>
+                                    <th>Complete Checkup</th>
+                                    <th>Executive Health</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Complete Blood Count</td>
+                                    <td><i class="fa-solid fa-circle-check" style="color:var(--secondary)"></i></td>
+                                    <td><i class="fa-solid fa-circle-check" style="color:var(--secondary)"></i></td>
+                                    <td><i class="fa-solid fa-circle-check" style="color:var(--secondary)"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Lipid & Liver Profile</td>
+                                    <td>Basic</td>
+                                    <td><i class="fa-solid fa-circle-check" style="color:var(--secondary)"></i></td>
+                                    <td><i class="fa-solid fa-circle-check" style="color:var(--secondary)"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Thyroid & Vitamins</td>
+                                    <td>-</td>
+                                    <td><i class="fa-solid fa-circle-check" style="color:var(--secondary)"></i></td>
+                                    <td><i class="fa-solid fa-circle-check" style="color:var(--secondary)"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Cardiac Markers & X-Ray</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td><i class="fa-solid fa-circle-check" style="color:var(--secondary)"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Turnaround Time</td>
+                                    <td>12 Hours</td>
+                                    <td>24 Hours</td>
+                                    <td>24 Hours</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer-modern">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <a href="index.html" class="logo">
+                                <i class="fa-solid fa-microscope" style="color: white; font-size: 2rem; margin-right: 12px;"></i>
+                                <div class="logo-text">
+                                    <h3>Doctors Diagnostic</h3>
+                                    <span>డాక్టర్స్ డయాగ్నస్టిక్</span>
+                                </div>
+                            </a>
+                            <p>Premium medical testing services delivering precision and care to the Sullurupeta community.</p>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4>Quick Links</h4>
+                            <a href="about.html">About Center</a>
+                            <a href="services.html">Our Services</a>
+                            <a href="index.html#why-choose-us">Why Choose Us</a>
+                            <a href="index.html#reviews">Patient Reviews</a>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4>Services</h4>
+                            <a href="services.html">Blood Testing</a>
+                            <a href="services.html">X-Ray Services</a>
+                            <a href="services.html">Pathology</a>
+                            <a href="packages.html">Health Checkups</a>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4>Contact</h4>
+                            <a href="tel:+919440920756">+91 94409 20756</a>
+                            <a href="contact.html">PSR Street, Sullurupeta</a>
+                            <a href="contact.html">Get Directions</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-bottom">
+                        <p>&copy; 2024 Doctors Diagnostic Centre. All Rights Reserved.</p>
+                        <div class="social-links-minimal">
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        
+        </div>
+    </div>
+
+    <!-- Floating Call Button -->
+    <a href="tel:+919440920756" class="floating-call-btn" aria-label="Call Now">
+        <div class="pulse-ring"></div>
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
