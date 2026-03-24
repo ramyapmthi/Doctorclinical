@@ -121,24 +121,27 @@
                                 <div class="form-group">
                                     <input type="text" id="contactAddress" class="form-control" placeholder="Address" required>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group custom-multiselect" id="customMultiSelect">
                                     <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem;">Service Category (Select multiple)</label>
-                                    <select id="contactServices" class="form-control" multiple required style="color:var(--text-muted); cursor: pointer; height: 120px;">
-                                        <option value="CBC+ESR">CBC+ESR</option>
-                                        <option value="CBC">CBC</option>
-                                        <option value="HbA1c">HbA1c</option>
-                                        <option value="Lipid Profile">Lipid Profile</option>
-                                        <option value="Liver Function Test">Liver Function Test</option>
-                                        <option value="Renal Function Test">Renal Function Test</option>
-                                        <option value="FBS">FBS</option>
-                                        <option value="PPBS">PPBS</option>
-                                        <option value="Urine Routine">Urine Routine</option>
-                                        <option value="Electrolytes (Sodium, Potassium, Calcium, Chloride)">Electrolytes (Sodium, Potassium, Calcium, Chloride)</option>
-                                        <option value="X-ray Chest">X-ray Chest</option>
-                                        <option value="ECG">ECG</option>
-                                        <option value="Thyroid T3">Thyroid T3</option>
-                                    </select>
-                                    <small style="color: var(--text-muted); font-size: 0.8rem;">Hold Ctrl (Windows) or Cmd (Mac) to select multiple</small>
+                                    <div class="multiselect-tags-container" id="multiselectTags">
+                                        <input type="text" class="multiselect-search" id="multiselectSearch" placeholder="Search & Select Tests...">
+                                    </div>
+                                    <div class="multiselect-dropdown" id="multiselectDropdown">
+                                        <label class="multiselect-option"><input type="checkbox" value="CBC+ESR"> <span>CBC+ESR</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="CBC"> <span>CBC</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="HbA1c"> <span>HbA1c</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="Lipid Profile"> <span>Lipid Profile</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="Liver Function Test"> <span>Liver Function Test</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="Renal Function Test"> <span>Renal Function Test</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="FBS"> <span>FBS</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="PPBS"> <span>PPBS</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="Urine Routine"> <span>Urine Routine</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="Electrolytes (Sodium, Potassium, Calcium, Chloride)"> <span>Electrolytes (Sodium, Potassium, Calcium, Chloride)</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="X-ray Chest"> <span>X-ray Chest</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="ECG"> <span>ECG</span></label>
+                                        <label class="multiselect-option"><input type="checkbox" value="Thyroid T3"> <span>Thyroid T3</span></label>
+                                    </div>
+                                    <div id="multiselectError" style="color: #ef4444; font-size: 0.85rem; margin-top: 5px; display: none;">Please select at least one test.</div>
                                 </div>
                                 <div class="form-group">
                                     <input type="date" id="contactDate" class="form-control" required style="color:var(--text-muted);">
@@ -161,12 +164,14 @@
                                     const date = document.getElementById('contactDate').value;
                                     const message = document.getElementById('contactMessage').value;
                                     
-                                    const selectElement = document.getElementById('contactServices');
-                                    const selectedServices = Array.from(selectElement.selectedOptions).map(option => option.value).join(', ');
+                                    const checkedBoxes = document.querySelectorAll('#multiselectDropdown input:checked');
+                                    const selectedServices = Array.from(checkedBoxes).map(cb => cb.value).join(', ');
                                     
                                     if (!selectedServices) {
-                                        alert("Please select at least one service category.");
+                                        document.getElementById('multiselectError').style.display = 'block';
                                         return;
+                                    } else {
+                                        document.getElementById('multiselectError').style.display = 'none';
                                     }
 
                                     const whatsappText = `Patient Name: ${name}
@@ -198,7 +203,7 @@ Additional Message: ${message ? message : 'None'}`;
                             <i class="fa-solid fa-location-dot" style="filter: drop-shadow(0 10px 10px rgba(0,0,0,0.4));"></i>
                         </div>
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1m2!1s0x3a4c81a9fbcb4c5d%3A0xe962d3a3721345!2sDoctors+Diagnostic+Centre!5e0!3m2!1sen!2sin!4v1703666666666!5m2!1sen!2sin" 
+                            src="https://maps.google.com/maps?q=Doctors%20Diagnostic%20Centre,%20Sullurupeta&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
@@ -216,7 +221,7 @@ Additional Message: ${message ? message : 'None'}`;
                     <div class="footer-grid">
                         <div class="footer-brand">
                             <a href="index.html" class="logo">
-                                <i class="fa-solid fa-microscope" style="color: white; font-size: 2rem; margin-right: 12px;"></i>
+                                <img src="images/ddc-logo-rb.png" alt="Doctors Diagnostic Centre" class="header-logo">
                                 <div class="logo-text">
                                     <h3>Doctors Diagnostic</h3>
                                     <span>డాక్టర్స్ డయాగ్నస్టిక్</span>

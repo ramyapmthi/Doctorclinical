@@ -348,7 +348,8 @@ img {
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 140px;
+    padding-top: 144px;
+    padding-bottom: 100px;
     overflow: hidden;
     background-color: var(--bg-white);
 }
@@ -409,6 +410,7 @@ img {
     display: flex;
     justify-content: center;
     text-align: center;
+    width: 100%;
 }
 
 .hero-content {
@@ -517,10 +519,7 @@ img {
 }
 
 .scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 60px;
     font-size: 12px;
     letter-spacing: 2px;
     color: #6B7280;
@@ -529,10 +528,10 @@ img {
 
 @keyframes bounceScroll {
     0%,100% {
-        transform: translate(-50%,0);
+        transform: translateY(0);
     }
     50% {
-        transform: translate(-50%,8px);
+        transform: translateY(8px);
     }
 }
 
@@ -1172,6 +1171,85 @@ img {
 }
 
 /* ==========================================================================
+   Equipment Hover Enhancements
+   ========================================================================== */
+.equipment-card {
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    border: 1px solid transparent;
+}
+
+.equipment-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to top, rgba(15, 76, 129, 0.5) 0%, rgba(46, 196, 182, 0.1) 80%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 24px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.equipment-label {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .equipment-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(46, 196, 182, 0.3);
+        box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.15), 0 0 15px rgba(46, 196, 182, 0.4);
+    }
+    
+    .equipment-card:hover .equipment-overlay {
+        opacity: 1;
+    }
+    
+    .equipment-card:hover .equipment-label {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .equipment-overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(15, 76, 129, 0.6) 0%, transparent 80%);
+    }
+    
+    .equipment-label {
+        transform: translateY(0);
+        opacity: 1;
+        font-size: 1rem;
+    }
+    
+    .facility-card.equipment-card:active .facility-img,
+    .facility-card.equipment-card:hover .facility-img {
+        transform: scale(1);
+    }
+    
+    .facility-card.equipment-card:active,
+    .facility-card.equipment-card:hover {
+        transform: none;
+        border-color: transparent;
+        box-shadow: var(--shadow-md);
+    }
+}
+
+/* ==========================================================================
    Healthcare Support Programs
    ========================================================================== */
 .support-cards-grid {
@@ -1684,32 +1762,22 @@ textarea.form-control { min-height: 120px; resize: vertical; }
         font-size: 1.35rem;
     }
 
-    .nav-actions .nav-btn { 
-        display: none; /* Hide primary one since mobile nav can hold it, or show minimal */
-    }
+    .nav-actions .nav-btn { display: none; }
     
     .nav-links .nav-btn {
-        display: inline-flex;
+        display: inline-flex !important;
         margin-top: 24px;
         width: 100%;
-        max-width: 200px;
+        max-width: 250px;
     }
     
-    .nav-actions { 
-        display: flex; 
-        align-items: center; 
-        gap: 12px; 
-    }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
     
-    .mobile-menu-toggle { 
-        display: block; 
-        position: relative;
-        z-index: 1000;
-    }
+    .mobile-menu-toggle { display: block; position: relative; z-index: 1000; }
     
     .hero-title { font-size: 3rem; }
-    .hero-buttons { flex-direction: column; }
-    .btn-large { width: 100%; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 100%; }
     
     .floating-icons { display: none; }
     
@@ -1717,14 +1785,62 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     
     .stat-item { flex: 1 1 100%; justify-content: flex-start; }
     
-    .contact-info-panel { padding: 40px 24px; }
+    .contact-info-panel, .contact-form-panel { padding: 40px 24px !important; }
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 24px; text-align: center; }
 }
 
+@media (max-width: 768px) {
+    /* Header & Base */
+    html, body { max-width: 100vw; overflow-x: hidden; }
+    .clinic-name { white-space: normal; line-height: 1.2; font-size: 0.95rem; }
+    .header-logo { max-height: 40px; }
+    .logo { gap: 8px; }
+    
+    /* Hero */
+    .hero { padding-top: 110px; padding-bottom: 70px; min-height: auto; }
+    .hero-title { font-size: 2.2rem; margin-bottom: 16px; }
+    .hero-subtitle { font-size: 1rem; margin-bottom: 32px; padding: 0 10px; }
+    
+    /* Stats Section */
+    .trust-bar { margin-top: -30px; }
+    .trust-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 24px; border-radius: var(--radius-lg); }
+    .stat-item { flex-direction: column; text-align: center; gap: 8px; }
+    .stat-item h3 { font-size: 1.5rem; }
+    .stat-icon { margin: 0 auto; }
+    
+    /* Forms (Force inline grids to stack) */
+    form [style*="display:grid"], form [style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    .form-control { font-size: 16px; /* Prevents iOS zooming */ padding: 14px 16px; }
+    
+    /* Service Custom Multiselect */
+    .multiselect-dropdown { position: relative; max-height: 220px; box-shadow: none; border-top: none; border-radius: 0 0 var(--radius-md) var(--radius-md); border-width: 0 1px 1px 1px; }
+    .custom-multiselect.open .multiselect-tags-container { border-radius: var(--radius-md) var(--radius-md) 0 0; }
+    
+    /* Packages & Specialists */
+    .packages-grid { grid-template-columns: 1fr; gap: 24px; }
+    .package-card { padding: 30px 20px; }
+    .specialists-grid { grid-template-columns: 1fr; gap: 24px; }
+    
+    /* Equipment / Facilities Section */
+    .facilities-grid { grid-template-columns: 1fr; gap: 24px; }
+    .facility-img { height: 250px; }
+    
+    /* Map Container */
+    section > div > div[style*="height: 500px"] { height: 350px !important; }
+    
+    /* Typography & Sections */
+    .section { padding: 60px 0; }
+    .section-title { font-size: 2rem; }
+}
+
 @media (max-width: 480px) {
-    .hero-title { font-size: 2.5rem; }
-    .review-card-modern { width: 300px; padding: 30px; }
-    .section-title { font-size: 2.2rem; }
-    .experience-badge-modern { right: 20px; bottom: -30px; padding: 16px; }
+    .review-card-modern { width: 280px; padding: 24px; }
+    .experience-badge-modern { right: 10px; bottom: -20px; padding: 12px; }
+    .badge-icon { width: 36px; height: 36px; font-size: 1.2rem; }
+    .badge-text strong { font-size: 1rem; }
+    .trust-stats { grid-template-columns: 1fr; } /* Stack vertically for very small screens */
 }
